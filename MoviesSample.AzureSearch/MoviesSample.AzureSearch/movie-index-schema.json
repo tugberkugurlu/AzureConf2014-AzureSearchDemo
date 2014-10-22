@@ -1,0 +1,14 @@
+﻿{
+  "name": "movies",  
+  "fields": [
+    {"name": "Id", "type": "Edm.String", "key": true, "searchable": false },
+    {"name": "Name", "type": "Edm.String", "suggestions": true },
+    {"name": "Image", "type": "Edm.String" },
+    {"name": "Url", "type": "Edm.String" },
+    {"name": "Rating", "type": "Edm.Double" },
+    {"name": "Year", "type": "Edm.Int32"},
+    {"name": "Episode", "type": "Edm.String" },
+    {"name": "NbVoters", "type": "Edm.Int32"},
+    {"name": "Rank", "type": "Edm.Int32"}
+  ]
+}

@@ -1,0 +1,86 @@
+﻿@model MoviesSample.AzureSearch.Web.Models.HomeViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@section head {
+    <style type="text/css">
+        ul.list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul.list li {
+            margin: 0;
+            padding: 5px 25px;
+            list-style: none;
+            border: 1px solid gray;
+            margin-bottom: 2.5px;
+            -ms-border-radius: 10px 10px;
+            border-radius: 10px 10px;
+        }
+
+    </style>
+}
+
+<div class="jumbotron">
+    <h1>Movies, Movies, Movies...</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { role = "form" }))
+        {
+            <div class="form-group">
+                @Html.LabelFor(x => x.SearchRequest.SearchTerm)
+                @Html.TextBoxFor(x => x.SearchRequest.SearchTerm, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.SearchRequest.YearStart)
+                @Html.TextBoxFor(x => x.SearchRequest.YearStart, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.SearchRequest.YearEnd)
+                @Html.TextBoxFor(x => x.SearchRequest.YearEnd, new { @class = "form-control" })
+            </div>
+            
+            <button type="submit" class="btn btn-primary">
+                <i class="glyphicon glyphicon-search"></i> Search
+            </button>
+        }
+    </div>
+    <div class="col-md-8">
+        <div>
+            @foreach (var facet in Model.Facets)
+            {
+                <span class="label label-primary">@facet.Key (@facet.Value)</span>
+            }
+        </div>
+        
+        <br />
+
+        <ul class="list">
+            @foreach (var movie in Model.Movies)
+            {
+                <li>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="img-rounded" src="@movie.ImageUrl" alt="@movie.Title" />
+                        </div>
+                        <div class="col-md-10">
+                            <h3>@movie.Title (@movie.Year)</h3>
+                            @if (movie.Episode != null)
+                            {
+                                <div>Episode: @movie.Episode</div>
+                            }
+                            <div>Rating: @movie.Rating</div>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
