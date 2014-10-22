@@ -1,0 +1,37 @@
+POST https://servicename.search.windows.net/indexes?api-version=2014-07-31-Preview HTTP/1.1
+User-Agent: Fiddler
+api-key: C63D7B2C4251D090DDD42C862AB8F140
+Content-Type: application/json
+Host: servicename.search.windows.net
+
+{
+	"name": "employees",
+	"fields": [{
+		"name": "employeeId",
+		"type": "Edm.String",
+		"key": true,
+		"searchable": false
+	},
+	{
+		"name": "firstName",
+		"type": "Edm.String"
+	},
+	{
+		"name": "lastName",
+		"type": "Edm.String"
+	},
+	{
+		"name": "age",
+		"type": "Edm.Int32"
+	},
+	{
+		"name": "about",
+		"type": "Edm.String",
+		"filterable": false,
+		"facetable": false
+	},
+	{
+		"name": "interests",
+		"type": "Collection(Edm.String)"
+	}]
+}

@@ -1,0 +1,26 @@
+POST https://servicename.search.windows.net/indexes/employees/docs/index?api-version=2014-07-31-Preview HTTP/1.1
+User-Agent: Fiddler
+api-key: C63D7B2C4251D090DDD42C862AB8F140
+Content-Type: application/json
+Host: servicename.search.windows.net
+
+{
+	"value": [{
+		"@search.action": "upload",
+		"employeeId": "2",
+		"firstName": "Douglas",
+		"lastName": "Fir",
+		"age": 35,
+		"about": "I like to build cabinets",
+		"interests": ["forestry"]
+	},
+	{
+		"@search.action": "upload",
+		"employeeId": "3",
+		"firstName": "John",
+		"lastName": "Fir",
+		"age": 25,
+		"about": "I love to go rock climbing",
+		"interests": ["sports", "music"]
+	}]
+}

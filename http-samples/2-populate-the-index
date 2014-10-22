@@ -1,0 +1,17 @@
+POST https://servicename.search.windows.net/indexes/employees/docs/index?api-version=2014-07-31-Preview HTTP/1.1
+User-Agent: Fiddler
+api-key: C63D7B2C4251D090DDD42C862AB8F140
+Content-Type: application/json
+Host: servicename.search.windows.net
+
+{
+	"value": [{
+		"@search.action": "upload",
+		"employeeId": "1",
+		"firstName": "Jane",
+		"lastName": "Smith",
+		"age": 32,
+		"about": "I like to collect rock albums",
+		"interests": ["music"]
+	}]
+}
