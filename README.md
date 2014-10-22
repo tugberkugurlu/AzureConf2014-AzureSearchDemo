@@ -1,0 +1,1 @@
+This repository contains the demo application presented at AzureConf 2014 "[Search Like a Pro with Azure Search](http://channel9.msdn.com/Events/Microsoft-Azure/AzureConf-2014/Search-Like-a-Pro-with-Azure-Search)" session.
